@@ -9,8 +9,7 @@ Description:  This is sort algorithms.
 
 UNSORTED_DATA = [170, 45, 75, 90, 802, 24, 2, 66]
 
-ALGORITHMS = ["radix", "bubble", "quick", "merge", "insertion", "comb"]
-
+# ALGORITHMS = ["radix", "bubble", "quick", "merge", "insertion", "comb"]
 
 
 def max_digit(nums = UNSORTED_DATA):
@@ -23,6 +22,7 @@ def max_digit(nums = UNSORTED_DATA):
     return max([len(str(num)) for num in nums])
 
 
+
 def deep_copy():
     data = []
     length_of_data = len(UNSORTED_DATA)
@@ -33,6 +33,7 @@ def deep_copy():
     
     # process is now finished, return
     return data
+
 
 
 def radix_sort():
@@ -72,7 +73,8 @@ def radix_sort():
     return sorted_data
 
 
-def pass_once_sort(sorted_data):
+
+def bubble_pass(sorted_data):
     """
     This function will swap and sort values if they are not in descending order.
     """
@@ -87,6 +89,7 @@ def pass_once_sort(sorted_data):
     return sorted_data
 
 
+
 def bubble_sort():
     """
     This is bubble sort, it is n^2 (nested for loop)
@@ -97,7 +100,7 @@ def bubble_sort():
     # for loop to make n^2
     for i in range(len(sorted_data)):
         # pass once
-        pass_once_sort(sorted_data)
+        bubble_pass(sorted_data)
 
     # end of bubble sort function
     return sorted_data
@@ -142,15 +145,22 @@ def quick_sort():
     sorted_data = deep_copy()
 
     pivot_trace = partition(sorted_data)
-    
-    print(pivot_trace)
+
+    return pivot_trace
+
 
     
-# def merge_sort(DATA, sorted):
-    
-# def insertion_sort(DATA, sorted):
+def merge_sort():
 
-# def comb_sort(DATA, sorted):
+    # split original data array into sub-arrays, then categorize back into sorted sub arrays by merging
+
+    return 0
+    
+# def insertion_sort():
+
+# def comb_sort():
+
+
 
 
 if __name__ == '__main__':
@@ -161,7 +171,7 @@ if __name__ == '__main__':
     # for i in range(len(ALGORITHMS)):
     #     print(ALGORITHMS[i])
     
-    the_data = bubble_sort()
+    the_data = quick_sort()
 
     if(the_data != UNSORTED_DATA):
         print("Operation completed successfully!")
